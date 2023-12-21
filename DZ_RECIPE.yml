@@ -1,0 +1,18 @@
+dev:
+  commands:
+  - command: npm install -g corepack && corepack enable
+    directory: vite
+    name: install cmd
+  - command: pnpm i --frozen-lockfile
+    directory: vite
+    name: install cmd
+  - command: npm i
+    directory: vite/playground
+    name: install cmd
+  name: vite-test
+  packages:
+  - nixpkgs.nodePackages.pnpm
+  - nixpkgs.nodejs_18
+  - nixpkgs.nodejs_21
+  repos:
+  - https://github.com/vitejs/vite
